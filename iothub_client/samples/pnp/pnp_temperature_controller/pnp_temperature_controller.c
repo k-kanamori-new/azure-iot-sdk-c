@@ -59,7 +59,7 @@ static const int g_sendTelemetryPollInterval = 600;
 static bool g_hubClientTraceEnabled = true;
 
 // DTMI indicating this device's model identifier.
-static const char g_temperatureControllerModelId[] = "dtmi:com:example:TemperatureController;1";
+static const char g_temperatureControllerModelId[] = "dtmi:azureiot:devkit:freertos:Esp32AzureIotKit;1";
 
 // Metadata to add to telemetry messages.
 static const char g_jsonContentType[] = "application/json";
