@@ -2616,10 +2616,10 @@ static int buildConfigForUsernameStep2IfNeeded(PMQTTTRANSPORT_HANDLE_DATA transp
         // TODO: The preview API version in SDK is only scoped to scenarios that require the modelId to be set.
         // https://github.com/Azure/azure-iot-sdk-c/issues/1547 tracks removing this once non-preview API versions support modelId.
         const char* apiVersion = IOTHUB_API_VERSION;
-        const char* appSpecifiedProductInfo = transport_data->transport_callbacks.prod_info_cb(transport_data->transport_ctx);
+        //const char* appSpecifiedProductInfo = transport_data->transport_callbacks.prod_info_cb(transport_data->transport_ctx);
         STRING_HANDLE productInfoEncoded = NULL;
 
-        if ((productInfoEncoded = URL_EncodeString((appSpecifiedProductInfo != NULL) ? appSpecifiedProductInfo : DEFAULT_IOTHUB_PRODUCT_IDENTIFIER)) == NULL)
+        if ((productInfoEncoded = STRING_construct("c%2F1.3.1(ard;portentaH7)")) == NULL)
         {
             LogError("Unable to UrlEncode productInfo");
             result = MU_FAILURE;
