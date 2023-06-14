@@ -555,9 +555,9 @@ int main(void)
             // incoming requests from the server and to do connection keep alives.
             if ((numberOfIterations % g_sendTelemetryPollInterval) == 0)
             {
-                PnP_TempControlComponent_SendWorkingSet(deviceClient);
+                //PnP_TempControlComponent_SendWorkingSet(deviceClient);
                 PnP_ThermostatComponent_SendCurrentTemperature(g_thermostatHandle1, deviceClient);
-                PnP_ThermostatComponent_SendCurrentTemperature(g_thermostatHandle2, deviceClient);
+                //PnP_ThermostatComponent_SendCurrentTemperature(g_thermostatHandle2, deviceClient);
             }
 
             IoTHubDeviceClient_LL_DoWork(deviceClient);
