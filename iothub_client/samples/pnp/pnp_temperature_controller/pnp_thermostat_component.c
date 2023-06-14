@@ -401,10 +401,10 @@ void PnP_ThermostatComponent_SendCurrentTemperature(PNP_THERMOSTAT_COMPONENT_HAN
     {
         LogError("IoTHubMessage_SetContentEncodingSystemProperty failed, error=%d", messageResult);
     }
-    else if ((messageResult = IoTHubMessage_SetComponentName(messageHandle, pnpThermostatComponent->componentName)) != IOTHUB_MESSAGE_OK)
-    {
-        LogError("IoTHubMessage_SetContentEncodingSystemProperty failed, error=%d", messageResult);
-    }
+    //else if ((messageResult = IoTHubMessage_SetComponentName(messageHandle, pnpThermostatComponent->componentName)) != IOTHUB_MESSAGE_OK)
+    //{
+    //    LogError("IoTHubMessage_SetContentEncodingSystemProperty failed, error=%d", messageResult);
+    //}
     // Send the telemetry message.
     else if ((iothubClientResult = IoTHubDeviceClient_LL_SendTelemetryAsync(deviceClient, messageHandle, NULL, NULL)) != IOTHUB_CLIENT_OK)
     {
